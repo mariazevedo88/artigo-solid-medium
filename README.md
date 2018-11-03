@@ -1,4 +1,4 @@
-# artigo-solid-medium
+# artigo-solid-medium [![Build Status](https://travis-ci.org/mariazevedo88/artigo-solid-medium.svg?branch=master)](https://travis-ci.org/mariazevedo88/artigo-solid-medium)
 
 Implementações dos exemplos demonstrados no artigo publicado na minha página no Medium, pelo EqualsLab. Link abaixo:
 

@@ -1,68 +1,61 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="artigo-solid-medium">
-    <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../Documents/eclipse-jee-photon/eclipse/"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="JUnit 4.libraryclasspath">
-        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
-        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
-    </path>
-    <path id="artigo-solid-medium.classpath">
-        <pathelement location="bin"/>
-        <path refid="JUnit 4.libraryclasspath"/>
-    </path>
-    <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-        <copy includeemptydirs="false" todir="bin">
-            <fileset dir="test">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <src path="test"/>
-            <classpath refid="artigo-solid-medium.classpath"/>
-        </javac>
-    </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="TesteOCP">
-        <java classname="io.github.mariazevedo88.solid.ocp.TesteOCP" failonerror="true" fork="yes">
-            <classpath refid="artigo-solid-medium.classpath"/>
-        </java>
-    </target>
+<project name="artigo-solid-medium" default="compile">
+	<description>artigo-solid-medium build file</description>
+	
+	<property file="build.properties"/>
+	
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<mkdir  dir="${build.dir}" />
+		<mkdir  dir="${build.dir}/${classes.dir}" />
+		<mkdir  dir="${build.dir}/${classes.test.dir}" />
+	</target>
+	
+	<target name="copy-resources" depends="clean">
+		<copy todir="${build.dir}/${classes.dir}">
+			<fileset dir="${src.dir}">
+				<include name="*.xml"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<path id="classpath-compile">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<path id="classpath-compile-test">
+		<path refid="classpath-compile"/>
+		<pathelement path="${build.dir}/${classes.dir}"/>
+	</path>
+	
+	<path id="classpath-test">
+		<path refid="classpath-compile-test"/>
+		<pathelement path="${build.dir}/${classes.test.dir}"/>
+	</path>
+	
+	<target name="compile" depends="copy-resources">
+		<javac destdir="${build.dir}/${classes.dir}" srcdir="${src.dir}">
+			<classpath refid="classpath-compile" />
+		</javac>
+	</target>
+	
+	<target name="compile-test" depends="compile">
+		<javac destdir="${build.dir}/${classes.test.dir}" srcdir="${test.dir}">
+			<classpath refid="classpath-compile-test" />
+		</javac>
+	</target>
+	
+	<target name="test" depends="compile-test">
+		<junit showoutput="true" printsummary="true">
+			<formatter type="plain"/>
+			<batchtest>
+				<fileset dir="${test.dir}">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+			<classpath refid="classpath-test" />
+		</junit>
+	</target>
+	
 </project>

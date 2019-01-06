@@ -51,7 +51,7 @@
 	    <classpath path="${lib.dir}/jacocoant.jar"/>
 	</taskdef>
 
-	<target name="runtest" depends="compile-test">
+	<target name="test" depends="compile-test">
 	    <jacoco:coverage destfile="${build.dir}/${test.report.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader">
 	        <junit showoutput="true" printsummary="on" haltonfailure="yes" fork="true" forkmode="once">	
 	        	<classpath location="${lib.dir}/junit.jar" />

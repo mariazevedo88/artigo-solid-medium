@@ -1,4 +1,4 @@
-# artigo-solid-medium [![Build Status](https://travis-ci.org/mariazevedo88/artigo-solid-medium.svg?branch=master)](https://travis-ci.org/mariazevedo88/artigo-solid-medium) [![Coverage Status](https://coveralls.io/repos/github/mariazevedo88/artigo-solid-medium/badge.svg?branch=master)](https://coveralls.io/github/mariazevedo88/artigo-solid-medium?branch=master)
+# artigo-solid-medium [![Build Status](https://travis-ci.org/mariazevedo88/artigo-solid-medium.svg?branch=master)](https://travis-ci.org/mariazevedo88/artigo-solid-medium) [![Coverage Status](https://codecov.io/github/mariazevedo88/artigo-solid-medium/coverage.svg?branch=master)](https://codecov.io/github/mariazevedo88/artigo-solid-medium/coverage.svg?branch=master)
 
 Implementações dos exemplos demonstrados no artigo publicado na minha página no Medium, pelo EqualsLab. Link abaixo:
 
@@ -14,3 +14,4 @@ Implementações dos exemplos demonstrados no artigo publicado na minha página 
 
 * [Existe avaliação e garantia de qualidade no seu código durante o desenvolvimento e depois do deploy?](https://bit.ly/2BLwPgi)
 * [Qualidade e JUnit: introduzindo automatização de testes unitários do seu software Java no dia-a-dia](https://bit.ly/2Oosil4)
+* [Utilizando Travis CI como servidor de integração contínua em projetos open-source: um exemplo com a linguagem Java](https://bit.ly/2QVowWw)

@@ -8,6 +8,7 @@
 		<mkdir  dir="${build.dir}" />
 		<mkdir  dir="${build.dir}/${classes.dir}" />
 		<mkdir  dir="${build.dir}/${classes.test.dir}" />
+		<mkdir  dir="${build.dir}/${test.report.dir}"/>
 	</target>
 	
 	<target name="copy-resources" depends="clean">
@@ -35,27 +36,53 @@
 	</path>
 	
 	<target name="compile" depends="copy-resources">
-		<javac destdir="${build.dir}/${classes.dir}" srcdir="${src.dir}">
+		<javac destdir="${build.dir}/${classes.dir}" srcdir="${src.dir}" includeantruntime="false">
 			<classpath refid="classpath-compile" />
 		</javac>
 	</target>
 	
 	<target name="compile-test" depends="compile">
-		<javac destdir="${build.dir}/${classes.test.dir}" srcdir="${test.dir}">
+		<javac destdir="${build.dir}/${classes.test.dir}" srcdir="${test.dir}" includeantruntime="false">
 			<classpath refid="classpath-compile-test" />
 		</javac>
 	</target>
 	
-	<target name="test" depends="compile-test">
-		<junit showoutput="true" printsummary="true">
-			<formatter type="plain"/>
-			<batchtest>
-				<fileset dir="${test.dir}">
-					<include name="**/*Test.java" />
-				</fileset>
-			</batchtest>
-			<classpath refid="classpath-test" />
-		</junit>
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+	    <classpath path="${lib.dir}/jacocoant.jar"/>
+	</taskdef>
+
+	<target name="runtest" depends="compile-test">
+	    <jacoco:coverage destfile="${build.dir}/${test.report.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader">
+	        <junit showoutput="true" printsummary="on" haltonfailure="yes" fork="true" forkmode="once">	
+	        	<classpath location="${lib.dir}/junit.jar" />
+	        	<classpath location="${lib.dir}/hamcrest-1.3.0.jar"/>
+	            <classpath location="${build.dir}/${test.report.dir}" />
+	        	<formatter type="plain"/>
+	            <batchtest fork="true" todir="${build.dir}/${test.report.dir}">
+	                <fileset dir="${test.dir}">
+	                    <include name="**/*Test.java"/>
+	                </fileset>
+	            </batchtest>
+	        	<classpath refid="classpath-test" />
+	        </junit>
+	    </jacoco:coverage>
+
+	    <jacoco:report xmlns:jacoco="antlib:org.jacoco.ant">
+	        <executiondata>
+	            <file file="${build.dir}/${test.report.dir}/jacoco.exec" />
+	        </executiondata>
+
+	        <structure name="Jacoco">
+	            <classfiles>
+	                <fileset dir="${build.dir}/${test.report.dir}" />
+	            </classfiles>
+	            <sourcefiles encoding="UTF-8">
+	                <fileset dir="${build.dir}/${test.report.dir}" />
+	            </sourcefiles>
+	        </structure>
+
+	        <html destdir="${build.dir}/${test.report.dir}/report" />
+	    </jacoco:report>
 	</target>
 	
 </project>

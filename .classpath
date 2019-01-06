@@ -2,12 +2,19 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/jacocoant.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-10">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/jacocoagent.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/jacococli.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.agent-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.ant-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.core-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.report-0.8.3.201812230753.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

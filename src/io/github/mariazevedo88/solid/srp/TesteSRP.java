@@ -19,7 +19,7 @@ public class TesteSRP {
 		daoFalso.salva(funcionario);
 		
 		logger.info(funcionario);
-		logger.info("Salário com descontos: " + salarioCalculado);
+		logger.info("Salario com descontos: " + salarioCalculado);
 	}
 
 }

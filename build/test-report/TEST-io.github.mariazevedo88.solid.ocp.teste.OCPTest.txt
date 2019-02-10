@@ -1,4 +1,4 @@
 Testsuite: io.github.mariazevedo88.solid.ocp.teste.OCPTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0,073 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0,066 sec
 
-Testcase: deveCalcularPrecosComDoisProdutos took 0,041 sec
+Testcase: deveCalcularPrecosComDoisProdutos took 0,011 sec

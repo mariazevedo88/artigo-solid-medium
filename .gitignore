@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
 bin/
+build/test-report/report
 
 # Log file
 *.log

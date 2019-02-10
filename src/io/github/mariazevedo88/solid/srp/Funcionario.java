@@ -7,6 +7,15 @@ public class Funcionario {
 	private double salario;
 	private Cargo cargo;
 	
+	public Funcionario() {};
+	
+	public Funcionario(Integer id, String nome, double salario, Cargo cargo) {
+		this.id = id;
+		this.nome = nome;
+		this.salario = salario;
+		this.cargo = cargo;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -41,6 +50,11 @@ public class Funcionario {
 
 	public double calculaSalario() {
 		return cargo.getRegra().calcula(this);
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [id=" + id + ", nome=" + nome + ", salario=" + salario + ", cargo=" + cargo + "]";
 	}
 	
 }

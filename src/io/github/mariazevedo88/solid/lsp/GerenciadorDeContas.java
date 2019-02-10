@@ -21,7 +21,7 @@ public class GerenciadorDeContas {
     }
 
     public void rende(double taxa){
-        this.saldo*= taxa;
+    	this.saldo = this.saldo + (this.saldo*taxa);
     }  
 
 }

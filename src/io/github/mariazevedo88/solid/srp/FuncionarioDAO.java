@@ -4,27 +4,36 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class FuncionarioDAO {
+import org.apache.log4j.Logger;
 
-	public void salva(Funcionario funcionario){
+public class FuncionarioDAO {
+	
+	private static final Logger logger = Logger.getLogger(FuncionarioDAO.class);
+
+	public void salva(Funcionario funcionario) throws SQLException{
 		
-		ConnectionDAO connectionDAO = new ConnectionDAO();
+		ConnectionDAO connectionDAO = new ConnectionDAO("root", "");
+		connectionDAO.setDbms("mysql");
+		connectionDAO.setServerName("localhost");
+		connectionDAO.setPortNumber("8080");
+		connectionDAO.setDbName("mock");
+		
 	    Connection connection = connectionDAO.createConnection();
-	    
+	    Statement stmt = null;
 		try {
-			Statement stmt = connection.createStatement();
+			stmt = connection.createStatement();
 			String sql = "insert into funcionario (id, nome, salario) values (" + funcionario.getId() + "," +
 					funcionario.getNome() + "," + funcionario.getSalario() + ")";
 			int rs = stmt.executeUpdate(sql);
 			
 			if (rs == 1){
-				System.out.println("Funcionario inserido com sucesso.");
-			}else if (rs == 0){
-				System.out.println("Nenhum funcionario inserido.");
+				logger.info("Funcionario inserido com sucesso.");
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error("Nenhum funcionario inserido.");
+		} finally {
+			if(stmt != null) stmt.close();
+			connection.close();
 		}
 	}
-
 }

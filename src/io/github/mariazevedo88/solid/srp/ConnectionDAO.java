@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 public class ConnectionDAO {
 	
 	private Properties connectionProps;
@@ -15,6 +17,8 @@ public class ConnectionDAO {
 	private String portNumber;
 	
 	private static final String JDBC = "jdbc:";
+	
+	private static final Logger logger = Logger.getLogger(ConnectionDAO.class);
 	
 	public ConnectionDAO (){
 		super();
@@ -89,9 +93,9 @@ public class ConnectionDAO {
     	        newConnection = DriverManager.getConnection(JDBC + getDbms() + ":" + getDbName() + ";create=true", getConnectionProps());
     	    }
         	setConnection(newConnection);
-        	System.out.println("Connected to database");
+        	logger.info("Connected to database");
 		} catch (SQLException e) {
-			System.out.println(e);
+			logger.error(e);
 		}
 	    
 	    return newConnection;

@@ -19,5 +19,10 @@ public class Vendedor extends Funcionario implements Comissionavel{
 	public double getComissao() {
 		return this.totalVendas * 0.2;
 	}
+	
+	@Override
+	public String toString() {
+		return "Vendedor [salario=" + salario + ", totalVendas=" + totalVendas + "]";
+	}
 
 }

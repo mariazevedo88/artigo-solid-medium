@@ -12,5 +12,10 @@ public class Desenvolvedor extends Funcionario implements Convencional{
 	public double getSalario() {
 		return this.salario;
 	}
+	
+	@Override
+	public String toString() {
+		return "Desenvolvedor [salario=" + salario + "]";
+	}
 
 }

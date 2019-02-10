@@ -5,8 +5,9 @@ public abstract class Funcionario implements Convencional{
 	private String nome;
 	private double salario;
 	
+	@Override
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {

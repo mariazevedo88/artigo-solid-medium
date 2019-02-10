@@ -11,8 +11,8 @@ public class TesteISP {
 		Vendedor vendedor = new Vendedor(3000, 52);
 		logger.info(vendedor);
 		
-		Desenvolvedor desenvolvedor = new Desenvolvedor(4000);
-		logger.info(desenvolvedor);
+		Funcionario desenvolvedorSoftware = new Desenvolvedor("Mariana", 4000);
+		logger.info(desenvolvedorSoftware);
 	}
 
 }

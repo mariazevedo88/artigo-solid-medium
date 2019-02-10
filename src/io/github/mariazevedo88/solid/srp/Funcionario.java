@@ -7,7 +7,7 @@ public class Funcionario {
 	private double salario;
 	private Cargo cargo;
 	
-	public Funcionario() {};
+	public Funcionario() {}
 	
 	public Funcionario(Integer id, String nome, double salario, Cargo cargo) {
 		this.id = id;

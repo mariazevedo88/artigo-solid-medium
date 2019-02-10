@@ -17,11 +17,10 @@ public class FuncionarioDAO {
 		connectionDAO.setServerName("localhost");
 		connectionDAO.setPortNumber("8080");
 		connectionDAO.setDbName("mock");
-		
-	    Connection connection = connectionDAO.createConnection();
-	    Statement stmt = null;
-		try {
-			stmt = connection.createStatement();
+	   
+		try (Connection connection = connectionDAO.createConnection();
+			 Statement stmt = connection.createStatement();) {
+			
 			String sql = "insert into funcionario (id, nome, salario) values (" + funcionario.getId() + "," +
 					funcionario.getNome() + "," + funcionario.getSalario() + ")";
 			int rs = stmt.executeUpdate(sql);
@@ -30,10 +29,7 @@ public class FuncionarioDAO {
 				logger.info("Funcionario inserido com sucesso.");
 			}
 		} catch (SQLException e) {
-			logger.error("Nenhum funcionario inserido.");
-		} finally {
-			if(stmt != null) stmt.close();
-			connection.close();
+			logger.error("Nenhum funcionario inserido." + e);
 		}
 	}
 }

@@ -22,5 +22,10 @@ public class ContaCorrenteComum {
 
     public void rende() {
         this.gerenciador.rende(0.02);
-    }  
+    } 
+    
+    @Override
+    public String toString() {
+    	return "Saldo -> " + this.getSaldo();
+    }
 }

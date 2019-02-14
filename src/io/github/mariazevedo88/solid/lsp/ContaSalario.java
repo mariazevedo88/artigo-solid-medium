@@ -4,6 +4,10 @@ public class ContaSalario {
 	
 	private GerenciadorDeContas gerenciador;
 	
+	public ContaSalario() {
+        this.gerenciador = new GerenciadorDeContas();
+    }
+	
 	public void deposita(double valor) {
         this.gerenciador.deposita(valor);
     }
@@ -15,5 +19,9 @@ public class ContaSalario {
     public double getSaldo() {
         return this.gerenciador.getSaldo();
     }
-
+    
+    @Override
+    public String toString() {
+    	return "Saldo -> " + this.getSaldo();
+    }
 }

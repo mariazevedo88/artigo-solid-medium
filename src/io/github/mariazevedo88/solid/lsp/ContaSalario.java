@@ -22,6 +22,6 @@ public class ContaSalario {
     
     @Override
     public String toString() {
-    	return "Saldo -> " + this.getSaldo();
+    	return "Saldo conta salario -> " + this.getSaldo();
     }
 }

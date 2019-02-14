@@ -26,6 +26,6 @@ public class ContaCorrenteComum {
     
     @Override
     public String toString() {
-    	return "Saldo -> " + this.getSaldo();
+    	return "Saldo conta corrente-> " + this.getSaldo();
     }
 }

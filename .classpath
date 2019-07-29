@@ -4,17 +4,17 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/jacocoant.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/jacocoagent.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/jacococli.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.agent-0.8.3.201812230753.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.ant-0.8.3.201812230753.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.core-0.8.3.201812230753.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/org.jacoco.report-0.8.3.201812230753.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/mysql-connector-java.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/hamcrest-1.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Mariana/workspace/artigo-solid-medium/lib/mockito-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/jacocoant.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/jacocoagent.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/jacococli.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/org.jacoco.agent-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/org.jacoco.ant-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/org.jacoco.core-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/org.jacoco.report-0.8.3.201812230753.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/hamcrest-1.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mariana/workspace-java/artigo-solid-medium/lib/mockito-all.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

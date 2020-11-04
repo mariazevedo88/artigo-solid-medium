@@ -11,7 +11,7 @@ public class TabelaDePrecoAPrazo implements TabelaDePreco{
 		}else if(valor > 500.0 && valor < 1000.0) {
 			return 0.05;
 		}else {
-			return 0.08;
+			return 0d;
 		}
 	}
 	

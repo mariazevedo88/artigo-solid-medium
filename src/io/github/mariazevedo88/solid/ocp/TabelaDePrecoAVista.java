@@ -11,7 +11,7 @@ public class TabelaDePrecoAVista implements TabelaDePreco{
 		}else if(valor > 500.0 && valor < 1000.0) {
 			return 0.10;
 		}else {
-			return 0.15;
+			return 0d;
 		}
 	}
 

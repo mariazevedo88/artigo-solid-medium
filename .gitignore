@@ -19,5 +19,12 @@ build/test-report/report
 *.tar.gz
 *.rar
 
+# Eclipse files
+.settings/
+.settings/org.eclipse.jdt.core.prefs
+
+# Mac files
+.DS_Store
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

@@ -2,12 +2,13 @@ package io.github.mariazevedo88.solid.srp;
 
 import java.sql.SQLException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.mockito.Mockito;
 
 public class TesteSRP {
 	
-	private static final Logger logger = Logger.getLogger(TesteSRP.class);
+	private static final Logger log = LogManager.getLogger(TesteSRP.class);
 	
 	public static void main(String[] args) throws SQLException {
 		
@@ -18,8 +19,8 @@ public class TesteSRP {
 		
 		daoFalso.salva(funcionario);
 		
-		logger.info(funcionario);
-		logger.info("Salario com descontos: " + salarioCalculado);
+		log.info(funcionario);
+		log.info("Salario com descontos: " + salarioCalculado);
 	}
 
 }

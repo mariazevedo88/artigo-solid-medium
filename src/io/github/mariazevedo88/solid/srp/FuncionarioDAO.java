@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class FuncionarioDAO {
 	
-	private static final Logger logger = Logger.getLogger(FuncionarioDAO.class);
+	private static final Logger log = LogManager.getLogger(FuncionarioDAO.class);
 
 	public void salva(Funcionario funcionario) throws SQLException{
 		
@@ -26,10 +28,10 @@ public class FuncionarioDAO {
 			int rs = stmt.executeUpdate(sql);
 			
 			if (rs == 1){
-				logger.info("Funcionario inserido com sucesso.");
+				log.info("Funcionario inserido com sucesso.");
 			}
 		} catch (SQLException e) {
-			logger.error("Nenhum funcionario inserido." + e);
+			log.error("Nenhum funcionario inserido." + e);
 		}
 	}
 }

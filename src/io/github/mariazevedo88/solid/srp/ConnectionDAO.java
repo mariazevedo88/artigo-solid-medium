@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class ConnectionDAO {
 	
@@ -18,7 +20,7 @@ public class ConnectionDAO {
 	
 	private static final String JDBC = "jdbc:";
 	
-	private static final Logger logger = Logger.getLogger(ConnectionDAO.class);
+	private static final Logger log = LogManager.getLogger(ConnectionDAO.class);
 	
 	public ConnectionDAO (){
 		super();
@@ -93,9 +95,9 @@ public class ConnectionDAO {
     	        newConnection = DriverManager.getConnection(JDBC + getDbms() + ":" + getDbName() + ";create=true", getConnectionProps());
     	    }
         	setConnection(newConnection);
-        	logger.info("Connected to database");
+        	log.info("Connected to database");
 		} catch (SQLException e) {
-			logger.error(e);
+			log.error(e);
 		}
 	    
 	    return newConnection;
